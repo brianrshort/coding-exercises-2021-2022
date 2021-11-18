@@ -26,7 +26,7 @@ const getRandEvent = () => {
     return days;
   };
   
-  let name; 
+
   
   // The scope of `name` is too tight 
   const logEvent = (name, event) => {
