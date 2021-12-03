@@ -1,4 +1,5 @@
 const charArr = [];
+const charParent = document.getElementById("charParent");
 
 const form = document.getElementById("characterForm");
 form.addEventListener("submit", event => {
@@ -30,4 +31,22 @@ form.addEventListener("submit", event => {
     localStorage.setItem("char", JSON.stringify(charArr));
     const stored = JSON.parse(localStorage.getItem("char"));
     console.log(stored);
+    renderChars(stored);
 })
+
+function renderChars(arr) {
+    for (var i = 0; i < arr.length; i++) {
+        console.log(arr[i]);
+        const char = arr[i];
+        const newDiv = document.createElement("div");
+        newDiv.innerHTML = `
+        Hail and well met! This ${char.race} character is a ${char.class}
+        with ${char.str} strength, ${char.dex} dexterity, and ${char.con} constitution.
+        They also have ${char.int} intelligence, ${char.wis} wisdom, and ${char.chr} charisma.
+        They adventure with a ${char.alignment} alignment in the world of ${char.world}.
+
+        `;
+        charParent.append(newDiv);
+    }
+    
+}
