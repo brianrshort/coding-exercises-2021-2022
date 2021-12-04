@@ -1,5 +1,6 @@
 const date = new Date();
 const day = date.getDay();
+const month = date.getMonth();
 
 const days = [
     "Sunday",
@@ -11,7 +12,24 @@ const days = [
     "Saturday"
 ]
 
-console.log(days[day]);
+const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+]
+
+console.log(months[month]);
 
 const today = document.getElementById("todays-date")
-today.innerText= days[day];
+today.innerText= `${days[day]}, ${months[month]} ${date.getDate()} ${date.getFullYear()}`;
