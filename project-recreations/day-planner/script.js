@@ -1,3 +1,7 @@
+///////////////////////////////////////////
+//Setting the date at the top of the page
+//////////////////////////////////////////
+
 const date = new Date();
 const day = date.getDay();
 const month = date.getMonth();
@@ -33,3 +37,8 @@ console.log(months[month]);
 
 const today = document.getElementById("todays-date")
 today.innerText= `${days[day]}, ${months[month]} ${date.getDate()} ${date.getFullYear()}`;
+
+
+
+
+
