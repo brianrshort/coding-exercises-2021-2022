@@ -67,7 +67,8 @@ clearButton.addEventListener("click", () => {
 const plannerContainer = document.getElementById("plannerContainer")
 
 for (var i = 1; i < 13; i++) {
-    let displayHour = i + 7;
+    let realHour = i + 7;
+    let displayHour = realHour;
     if (displayHour > 12) {
         displayHour -= 12;
     }
