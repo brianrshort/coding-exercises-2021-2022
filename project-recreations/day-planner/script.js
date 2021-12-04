@@ -6,6 +6,7 @@ const date = new Date();
 const day = date.getDay();
 const month = date.getMonth();
 const hour = date.getHours();
+
 const days = [
     "Sunday",
     "Monday",
@@ -74,6 +75,14 @@ for (var i = 1; i < 13; i++) {
     }
     let div = document.createElement("div");
     div.innerText = `${displayHour} o'clock`;
+    if (realHour < hour) {
+        div.innerText += "|| Past";
+    } else if (realHour === hour) {
+        div.innerText += "|| Present";
+    } else if (realHour > hour) {
+        div.innerText += "|| Future";
+    }
+
     let input = document.createElement("input");
     input.type = "text";
     input.id = i;
@@ -81,6 +90,10 @@ for (var i = 1; i < 13; i++) {
     submit.type = "submit";
     submit.id = `${i}-submit`;
     submit.innerText = "Submit";
+    let submitEl = document.getElementById(`${i}-submit`);
+    submitEl.addEventListener("click", () => {
+        
+    })
     plannerContainer.append(div);
     plannerContainer.append(input);
     plannerContainer.append(submit);
