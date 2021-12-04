@@ -38,6 +38,7 @@ const months = [
 const today = document.getElementById("todays-date")
 today.innerText= `${days[day]}, ${months[month]} ${date.getDate()} ${date.getFullYear()}`;
 
+
 //////////////////////////////////
 //Clear button functionality
 //////////////////////////////////
@@ -45,7 +46,7 @@ today.innerText= `${days[day]}, ${months[month]} ${date.getDate()} ${date.getFul
 
 const clearButton = document.getElementById("clear-click");
 clearButton.addEventListener("click", () => {
-    console.log("Cleared");
+    //console.log("Cleared");
     localStorage.setItem("1", "");
     localStorage.setItem("2", "");
     localStorage.setItem("3", "");
@@ -60,3 +61,13 @@ clearButton.addEventListener("click", () => {
     localStorage.setItem("12", "");
 })
 
+//////////////////////////////
+//Day Planner Input and Content
+//////////////////////////////
+const plannerContainer = document.getElementById("plannerContainer")
+
+for (var i = 0; i < 12; i++) {
+    let div = document.createElement("div");
+    div.innerText = `${i} o'clock`;
+    plannerContainer.append(div);
+}
