@@ -5,7 +5,7 @@
 const date = new Date();
 const day = date.getDay();
 const month = date.getMonth();
-
+const hour = date.getHours();
 const days = [
     "Sunday",
     "Monday",
