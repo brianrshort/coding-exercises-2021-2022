@@ -60,6 +60,7 @@ clearButton.addEventListener("click", () => {
     localStorage.setItem("5", "");
     localStorage.setItem("6", "");
     localStorage.setItem("7", "");
+    location.reload();
 })
 
 //////////////////////////////
@@ -99,10 +100,18 @@ for (var i = 1; i < 13; i++) {
     plannerContainer.append(div);
     plannerContainer.append(input);
     plannerContainer.append(submit);
+    let plans = document.createElement("div");
+    if (!localStorage.getItem(displayHour.toString())) {
+        plans.innerText = "No plans";
+    } else {
+        plans.innerText = localStorage.getItem(displayHour.toString());
+    }
+    plannerContainer.append(plans);
 }
 
 function logEntries(numString) {
     console.log(`${numString}-value`)
     let val = document.getElementById(`${numString}-value`);
     localStorage.setItem(numString, val.value);
+    location.reload();
 }
