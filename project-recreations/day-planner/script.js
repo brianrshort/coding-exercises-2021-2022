@@ -48,6 +48,11 @@ today.innerText= `${days[day]}, ${months[month]} ${date.getDate()} ${date.getFul
 const clearButton = document.getElementById("clear-click");
 clearButton.addEventListener("click", () => {
     //console.log("Cleared");
+    localStorage.setItem("8", "");
+    localStorage.setItem("9", "");
+    localStorage.setItem("10", "");
+    localStorage.setItem("11", "");
+    localStorage.setItem("12", "");
     localStorage.setItem("1", "");
     localStorage.setItem("2", "");
     localStorage.setItem("3", "");
@@ -55,11 +60,6 @@ clearButton.addEventListener("click", () => {
     localStorage.setItem("5", "");
     localStorage.setItem("6", "");
     localStorage.setItem("7", "");
-    localStorage.setItem("8", "");
-    localStorage.setItem("9", "");
-    localStorage.setItem("10", "");
-    localStorage.setItem("11", "");
-    localStorage.setItem("12", "");
 })
 
 //////////////////////////////
@@ -85,17 +85,24 @@ for (var i = 1; i < 13; i++) {
 
     let input = document.createElement("input");
     input.type = "text";
-    input.id = i;
+    input.id = `${displayHour}-value`;
     let submit = document.createElement("input");
     submit.type = "submit";
-    submit.id = `${i}-submit`;
+    submit.id = `${displayHour}-submit`;
     submit.innerText = "Submit";
     submit.addEventListener("click", (event) => {
         event.preventDefault();
         //console.log("Submitted");
-        logEntries(i);
+        //console.log(displayHour);
+        logEntries(displayHour.toString());
     });
     plannerContainer.append(div);
     plannerContainer.append(input);
     plannerContainer.append(submit);
+}
+
+function logEntries(numString) {
+    console.log(`${numString}-value`)
+    let val = document.getElementById(`${numString}-value`);
+    localStorage.setItem(numString, val.value);
 }
