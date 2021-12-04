@@ -90,10 +90,11 @@ for (var i = 1; i < 13; i++) {
     submit.type = "submit";
     submit.id = `${i}-submit`;
     submit.innerText = "Submit";
-    let submitEl = document.getElementById(`${i}-submit`);
-    submitEl.addEventListener("click", () => {
-        
-    })
+    submit.addEventListener("click", (event) => {
+        event.preventDefault();
+        //console.log("Submitted");
+        logEntries(i);
+    });
     plannerContainer.append(div);
     plannerContainer.append(input);
     plannerContainer.append(submit);
