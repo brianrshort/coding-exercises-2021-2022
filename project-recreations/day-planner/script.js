@@ -77,6 +77,11 @@ for (var i = 1; i < 13; i++) {
     let input = document.createElement("input");
     input.type = "text";
     input.id = i;
+    let submit = document.createElement("input");
+    submit.type = "submit";
+    submit.id = `${i}-submit`;
+    submit.innerText = "Submit";
     plannerContainer.append(div);
     plannerContainer.append(input);
+    plannerContainer.append(submit);
 }
