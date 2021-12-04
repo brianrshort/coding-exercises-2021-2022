@@ -67,8 +67,12 @@ clearButton.addEventListener("click", () => {
 const plannerContainer = document.getElementById("plannerContainer")
 
 for (var i = 1; i < 13; i++) {
+    let displayHour = i + 7;
+    if (displayHour > 12) {
+        displayHour -= 12;
+    }
     let div = document.createElement("div");
-    div.innerText = `${i} o'clock`;
+    div.innerText = `${displayHour} o'clock`;
     let input = document.createElement("input");
     input.type = "text";
     input.id = i;
