@@ -12,3 +12,7 @@ let startButton = document.getElementById("startGame");
 let nextButton = document.getElementById("nextQuestion");
 let newGameButton = document.getElementById("newGame");
 
+let score = 0;
+let currentQuestionIndex;
+let secondsLeft = 100;
+
