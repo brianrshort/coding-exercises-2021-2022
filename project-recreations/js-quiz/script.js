@@ -62,9 +62,16 @@ function intro() {
 startButton.addEventListener("click", (e) => {
     e.preventDefault();
     displayQuestions();
+    setTime();
 })
 
-
+function displayQuestions() {
+    let obj = quizArr[currentQuestionIndex];
+    questionArea.innerText = obj.q.toString();
+    answerOne.innerText = obj.a1.text;
+    answerTwo.innerText = obj.a2.text;
+    answerThree.innerText = obj.a3.text;
+    answerFour.innerText = obj.a4.text;
+}
 
 intro();
-setTime();
