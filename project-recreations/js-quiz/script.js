@@ -14,6 +14,32 @@ let score = 0;
 let currentQuestionIndex;
 let secondsLeft = 100;
 
+let quizArr = [
+    {
+        q: "What's my name?",
+        a1: {
+            index: 1,
+            text: "David",
+            correct: false
+        },
+        a2: {
+            index: 2,
+            text: "Michael",
+            correct: false
+        },
+        a3: {
+            index: 3,
+            text: "Brian",
+            correct: true
+        },
+        a4: {
+            index: 4,
+            text: "Hameed",
+            correct: false
+        },
+    }
+] 
+
 function setTime() {
     secondsLeft = 100;
     let timerInterval = setInterval(() => {
@@ -31,6 +57,8 @@ function intro() {
     newGameButton.style.display = "none";
     questionArea.innerText = "Click to start the game!";
 }
+
+
 
 intro();
 setTime();
