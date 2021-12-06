@@ -1,5 +1,3 @@
-//timer score questions Q1 A1 A2 A3 A4 startGame nextQuestion newGame
-
 let timeField = document.getElementById("timer");
 let scoreField = document.getElementById("score");
 let questionField = document.getElementById("questions");
@@ -28,4 +26,11 @@ function setTime() {
     }, 1000)
 }
 
+function intro() {
+    nextButton.style.display = "none";
+    newGameButton.style.display = "none";
+    questionArea.innerText = "Click to start the game!";
+}
+
+intro();
 setTime();
