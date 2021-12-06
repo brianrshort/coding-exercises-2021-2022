@@ -56,7 +56,13 @@ function intro() {
     nextButton.style.display = "none";
     newGameButton.style.display = "none";
     questionArea.innerText = "Click to start the game!";
+    currentQuestionIndex = 0;
 }
+
+startButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    displayQuestions();
+})
 
 
 
