@@ -59,6 +59,21 @@ button.addEventListener("click", (e) => {
                     break;
         }
     }
+    console.log(`Capital letters checked:  #${caps.checked}`)
+    if (caps.checked) {
+        //console.log(pw);
+        //console.log(splitCaps);
+        let checkCaps = pw.some(el => {
+            
+            return splitCaps.includes(el);
+        });
+        console.log(`Password includes capitals: ${checkCaps}`);
+        if (!checkCaps) {
+
+        }
+    }
+
+    //console.log(pw);
     passPlace.innerText = pw.join("");
 }
 })
