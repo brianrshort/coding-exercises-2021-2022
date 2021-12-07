@@ -1,3 +1,4 @@
+//A long list of html element variables
 let timeField = document.getElementById("timer");
 let scoreField = document.getElementById("score");
 let questionField = document.getElementById("questions");
@@ -11,10 +12,15 @@ let nextButton = document.getElementById("nextQuestion");
 let newGameButton = document.getElementById("newGame");
 let rightOrWrong = document.getElementById("rightOrWrong");
 
+//The score variable (for user's quiz score); currentQuestionIndex
+//variable (which keeps track of which question the quiz is on); and
+///the secondsleft variable (which keeps track of how much time a user
+//has left to complete the quiz)
 let score = 0;
 let currentQuestionIndex;
 let secondsLeft = 100;
 
+//The quiz question array
 let quizArr = [
     {
         q: "What's my name?",
@@ -110,6 +116,8 @@ let quizArr = [
     }
 ] 
 
+//The setTime function controls the quiz timer, giving users
+//100 seconds to complete four quiz questions
 function setTime() {
     secondsLeft = 100;
     let timerInterval = setInterval(() => {
@@ -118,10 +126,12 @@ function setTime() {
         if (secondsLeft < 0) {
             clearInterval(timerInterval);
             timeField.innerText = "";
+            gameOver();
         }
     }, 1000)
 }
 
+//The intro function starts the game and explains how to start it
 function intro() {
     nextButton.style.display = "none";
     newGameButton.style.display = "none";
@@ -129,19 +139,8 @@ function intro() {
     currentQuestionIndex = 0;
 }
 
-startButton.addEventListener("click", (e) => {
-    e.preventDefault();
-    displayQuestions();
-    setTime();
-})
-
-newGameButton.addEventListener("click", (e) => {
-    e.preventDefault();
-    currentQuestionIndex = 0;
-    displayQuestions();
-    setTime();
-}) 
-
+//The displayQuestions function grabs info from the object array quizArr
+//and displays it in the appropriate divs
 function displayQuestions() {
     //console.log(currentQuestionIndex);
     rightOrWrong.innerText = "";
@@ -159,6 +158,48 @@ function displayQuestions() {
     startButton.style.display = "none";
     nextButton.style.display = "none";
 }
+
+//The checkAnswer function checks a divs value (which is derived
+//from the quizArr object) to determine how to express to the user
+//whether they got the right or wrong answer
+function checkAnswer(val) {
+    console.log(val);
+    nextButton.style.display = "block";
+    if (val === "false") {
+        rightOrWrong.innerText = "Wrong answer!";
+        secondsLeft -= 5;
+    } else if (val === "true") {
+        rightOrWrong.innerText = "Right answer!";
+        score += 1000; 
+    }
+}
+
+//Sets the end of game state
+function gameOver() {
+        questionArea.innerText = "Game Over";
+        answerOne.innerText = "";
+        answerTwo.innerText = "";
+        answerThree.innerText = "";
+        answerFour.innerText = "";
+        rightOrWrong.innerText = "";
+        scoreField.innerText = `Your score: ${score} points`;
+        newGameButton.style.display = "block";
+        nextButton.style.display = "none";
+        secondsLeft = 0;
+}
+
+startButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    displayQuestions();
+    setTime();
+})
+
+newGameButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    currentQuestionIndex = 0;
+    displayQuestions();
+    setTime();
+}) 
 
 answerOne.addEventListener("click", (e) => {
     e.preventDefault();
@@ -180,18 +221,6 @@ answerFour.addEventListener("click", (e) => {
     checkAnswer(e.target.value);
 });
 
-function checkAnswer(val) {
-    console.log(val);
-    nextButton.style.display = "block";
-    if (val === "false") {
-        rightOrWrong.innerText = "Wrong answer!";
-        secondsLeft -= 5;
-    } else if (val === "true") {
-        rightOrWrong.innerText = "Right answer!";
-        score += 1000; 
-    }
-}
-
 nextButton.addEventListener("click", (e) => {
     e.preventDefault();
     if (currentQuestionIndex < quizArr.length - 1) {
@@ -199,16 +228,7 @@ nextButton.addEventListener("click", (e) => {
         //console.log(currentQuestionIndex);
         displayQuestions();
     } else {
-        questionArea.innerText = "Game Over";
-        answerOne.innerText = "";
-        answerTwo.innerText = "";
-        answerThree.innerText = "";
-        answerFour.innerText = "";
-        rightOrWrong.innerText = "";
-        scoreField.innerText = `Your score: ${score} points`;
-        newGameButton.style.display = "block";
-        nextButton.style.display = "none";
-        secondsLeft = 0;
+        gameOver();
     }
 })
 
