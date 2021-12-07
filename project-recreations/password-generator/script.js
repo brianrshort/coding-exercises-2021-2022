@@ -18,6 +18,9 @@ let splitChars = charsArr.split("");
 button.addEventListener("click", (e) => {
     e.preventDefault();
     //console.log(pwlength.value);
+    if (!caps.checked && !lowers.checked && !nums.checked && !chars.checked) {
+        passPlace.innerText = "No password character types selected."
+    } else {
     let pw = [];
     while (pw.length < pwlength.value) {
         let rand = Math.floor(Math.random() * 4);
@@ -56,5 +59,6 @@ button.addEventListener("click", (e) => {
                     break;
         }
     }
-    console.log(pw.join(""));
+    passPlace.innerText = pw.join("");
+}
 })
