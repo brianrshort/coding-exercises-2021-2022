@@ -148,11 +148,42 @@ function displayQuestions() {
     answerOne.innerText = obj.a1.text;
     answerOne.value = obj.a1.correct;
     answerTwo.innerText = obj.a2.text;
+    answerTwo.value = obj.a2.correct;
     answerThree.innerText = obj.a3.text;
+    answerThree.value = obj.a3.correct;
     answerFour.innerText = obj.a4.text;
+    answerFour.value = obj.a4.correct;
     startButton.style.display = "none";
     nextButton.style.display = "block";
 }
+
+answerOne.addEventListener("click", (e) => {
+    e.preventDefault();
+    checkAnswer(e.target.value);
+});
+
+answerTwo.addEventListener("click", (e) => {
+    e.preventDefault();
+    checkAnswer(e.target.value);
+});
+
+answerThree.addEventListener("click", (e) => {
+    e.preventDefault();
+    checkAnswer(e.target.value);
+});
+
+answerFour.addEventListener("click", (e) => {
+    e.preventDefault();
+    checkAnswer(e.target.value);
+});
+
+function checkAnswer(val) {
+    console.log(val);
+}
+
+
+
+
 
 nextButton.addEventListener("click", (e) => {
     e.preventDefault();
