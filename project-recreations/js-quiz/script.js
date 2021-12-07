@@ -144,6 +144,7 @@ newGameButton.addEventListener("click", (e) => {
 
 function displayQuestions() {
     //console.log(currentQuestionIndex);
+    rightOrWrong.innerText = "";
     let obj = quizArr[currentQuestionIndex];
     questionArea.innerText = obj.q.toString();
     answerOne.innerText = obj.a1.text;
@@ -182,14 +183,12 @@ function checkAnswer(val) {
     console.log(val);
     if (val === "false") {
         rightOrWrong.innerText = "Wrong answer!";
+        secondsLeft -= 5;
     } else if (val === "true") {
         rightOrWrong.innerText = "Right answer!";
+        score += 1000; 
     }
 }
-
-
-
-
 
 nextButton.addEventListener("click", (e) => {
     e.preventDefault();
@@ -203,6 +202,8 @@ nextButton.addEventListener("click", (e) => {
         answerTwo.innerText = "";
         answerThree.innerText = "";
         answerFour.innerText = "";
+        rightOrWrong.innerText = "";
+        scoreField.innerText = `Your score: ${score} points`;
         newGameButton.style.display = "block";
         nextButton.style.display = "none";
         secondsLeft = 0;
