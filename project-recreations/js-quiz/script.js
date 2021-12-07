@@ -153,7 +153,13 @@ nextButton.addEventListener("click", (e) => {
         console.log(currentQuestionIndex);
         displayQuestions();
     } else {
-        questionField.innerText = "Game Over";
+        questionArea.innerText = "Game Over";
+        answerOne.innerText = "";
+        answerTwo.innerText = "";
+        answerThree.innerText = "";
+        answerFour.innerText = "";
+        newGameButton.style.display = "block";
+        nextButton.style.display = "none";
     }
 })
 
