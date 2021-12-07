@@ -72,6 +72,8 @@ function displayQuestions() {
     answerTwo.innerText = obj.a2.text;
     answerThree.innerText = obj.a3.text;
     answerFour.innerText = obj.a4.text;
+    startButton.style.display = "none";
+    nextButton.style.display = "block";
 }
 
 intro();
