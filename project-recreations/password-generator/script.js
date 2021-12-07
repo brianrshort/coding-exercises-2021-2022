@@ -6,8 +6,55 @@ const nums = document.getElementById("PWType4");
 const pwlength = document.getElementById("PWLength");
 const button = document.getElementById("genPW");
 
+let capAlpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let splitCaps = capAlpha.split("");
+let lowerAlpha = "abcdefghijklmnopqrstuvwxyz";
+let splitLowers = lowerAlpha.split("");
+let numArr = "0123456789";
+let splitNums = numArr.split("");
+let charsArr = "!@#$%^&*()";
+let splitChars = charsArr.split("");
 
 button.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log(caps.checked);
+    //console.log(pwlength.value);
+    let pw = [];
+    while (pw.length < pwlength.value) {
+        let rand = Math.floor(Math.random() * 4);
+        switch(rand) {
+           case 0:
+                if (caps.checked) {
+                    let rand = Math.floor(Math.random() * 26);
+                    pw.push(splitCaps[rand]); 
+                } else {
+                    continue;
+                };
+                break;
+            case 1:
+                if (lowers.checked) {
+                        let rand = Math.floor(Math.random() * 26);
+                        pw.push(splitLowers[rand]); 
+                    } else {
+                        continue;
+                    };
+                    break;
+            case 2:
+                if (nums.checked) {
+                    let rand = Math.floor(Math.random() * 10);
+                    pw.push(splitNums[rand]); 
+                } else {
+                    continue;
+                };
+                break;
+            case 3:
+                if (chars.checked) {
+                        let rand = Math.floor(Math.random() * 10);
+                        pw.push(splitChars[rand]); 
+                    } else {
+                        continue;
+                    };
+                    break;
+        }
+    }
+    console.log(pw.join(""));
 })
