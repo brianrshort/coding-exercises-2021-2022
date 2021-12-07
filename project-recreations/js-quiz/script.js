@@ -9,6 +9,7 @@ let answerFour = document.getElementById("A4");
 let startButton = document.getElementById("startGame");
 let nextButton = document.getElementById("nextQuestion");
 let newGameButton = document.getElementById("newGame");
+let rightOrWrong = document.getElementById("rightOrWrong");
 
 let score = 0;
 let currentQuestionIndex;
