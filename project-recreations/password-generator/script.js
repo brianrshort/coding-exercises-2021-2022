@@ -1,3 +1,4 @@
+//HTML element variables
 const passPlace = document.getElementById("PWplacement");
 const caps = document.getElementById("PWType1");
 const lowers = document.getElementById("PWType2");
@@ -6,6 +7,7 @@ const nums = document.getElementById("PWType4");
 const pwlength = document.getElementById("PWLength");
 const button = document.getElementById("genPW");
 
+//Variables for letters, numbers, and character arrays
 let capAlpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let splitCaps = capAlpha.split("");
 let lowerAlpha = "abcdefghijklmnopqrstuvwxyz";
@@ -15,15 +17,25 @@ let splitNums = numArr.split("");
 let charsArr = "!@#$%^&*()";
 let splitChars = charsArr.split("");
 
+//The main function, added to the button event listener
 button.addEventListener("click", (e) => {
     e.preventDefault();
     //console.log(pwlength.value);
+
+    //If no boxes were checked, a warning/error message appears
     if (!caps.checked && !lowers.checked && !nums.checked && !chars.checked) {
         passPlace.innerText = "No password character types selected."
     } else {
+
+    //The main password variable
     let pw = [];
+
+    //As long as the length of the pw array is less than what the user requsted as 
+    //the password length, this code runs. 
     while (pw.length < pwlength.value) {
+        //A randomizer to pick which of the character types to include
         let rand = Math.floor(Math.random() * 4);
+        //The switch case which actually chooses a character based on the randomizer
         switch(rand) {
            case 0:
                 if (caps.checked) {
@@ -59,69 +71,62 @@ button.addEventListener("click", (e) => {
                     break;
         }
     }
-    console.log(`Capital letters checked:  #${caps.checked}`)
+    
+    //Validation to check if a capital letter was inserted if the checkbox was marked;
+    //if not, this picks a random capital letter and spices it in at a random index
     if (caps.checked) {
-        //console.log(pw);
-        //console.log(splitCaps);
-        let checkCaps = pw.some(el => {
-            
+        let checkCaps = pw.some(el => {    
             return splitCaps.includes(el);
         });
-        console.log(`Password includes capitals: ${checkCaps}`);
         if (!checkCaps) {
             let randIndex = Math.floor(Math.random() * pw.length);
             let randCap = splitCaps[Math.floor(Math.random() * 26)];
             pw.splice(randIndex, 1, randCap);
-            console.log(`Inserted ${randCap} at index ${randIndex}`);
         }
     }
+
+    //Validation to check if a lowercase letter was inserted if the checkbox was marked;
+    //if not, this picks a random lowercase letter and spices it in at a random index
     if (lowers.checked) {
-        //console.log(pw);
-        //console.log(splitCaps);
-        let checkLowers = pw.some(el => {
-            
+        let checkLowers = pw.some(el => {    
             return splitLowers.includes(el);
         });
-        console.log(`Password includes lowers: ${checkLowers}`);
         if (!checkLowers) {
             let randIndex = Math.floor(Math.random() * pw.length);
             let randCap = splitLowers[Math.floor(Math.random() * 26)];
             pw.splice(randIndex, 1, randCap);
-            console.log(`Inserted ${randCap} at index ${randIndex}`);
         }
     }
+
+    //Validation to check if a special character was inserted if the checkbox was marked;
+    //if not, this picks a random character and spices it in at a random index
     if (chars.checked) {
-        //console.log(pw);
-        //console.log(splitCaps);
-        let checkChars = pw.some(el => {
-            
+        let checkChars = pw.some(el => {    
             return splitChars.includes(el);
         });
-        console.log(`Password includes characters: ${checkChars}`);
         if (!checkChars) {
             let randIndex = Math.floor(Math.random() * pw.length);
             let randCap = splitChars[Math.floor(Math.random() * 26)];
             pw.splice(randIndex, 1, randCap);
-            console.log(`Inserted ${randCap} at index ${randIndex}`);
         }
     }
+
+    //Validation to check if a number was inserted if the checkbox was marked;
+    //if not, this picks a random number and spices it in at a random index
     if (nums.checked) {
-        //console.log(pw);
-        //console.log(splitCaps);
-        let checkNums = pw.some(el => {
-            
+        let checkNums = pw.some(el => {    
             return splitNums.includes(el);
         });
-        console.log(`Password includes numbers: ${checkNums}`);
         if (!checkNums) {
             let randIndex = Math.floor(Math.random() * pw.length);
             let randCap = splitNums[Math.floor(Math.random() * 26)];
             pw.splice(randIndex, 1, randCap);
-            console.log(`Inserted ${randCap} at index ${randIndex}`);
         }
     }
 
     //console.log(pw);
+
+    //Finally, make the password actually appear on the screen after it's been created
     passPlace.innerText = pw.join("");
 }
 })
