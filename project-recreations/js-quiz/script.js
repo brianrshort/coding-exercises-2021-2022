@@ -145,6 +145,7 @@ newGameButton.addEventListener("click", (e) => {
 function displayQuestions() {
     //console.log(currentQuestionIndex);
     rightOrWrong.innerText = "";
+    scoreField.innerText = "";
     let obj = quizArr[currentQuestionIndex];
     questionArea.innerText = obj.q.toString();
     answerOne.innerText = obj.a1.text;
