@@ -66,6 +66,7 @@ startButton.addEventListener("click", (e) => {
 })
 
 function displayQuestions() {
+    console.log(currentQuestionIndex);
     let obj = quizArr[currentQuestionIndex];
     questionArea.innerText = obj.q.toString();
     answerOne.innerText = obj.a1.text;
@@ -75,5 +76,17 @@ function displayQuestions() {
     startButton.style.display = "none";
     nextButton.style.display = "block";
 }
+
+nextButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (currentQuestionIndex < quizArr.length - 1) {
+        currentQuestionIndex++;
+        console.log(currentQuestionIndex);
+        displayQuestions();
+    } else {
+        questionField.innerText = "Game Over";
+    }
+})
+
 
 intro();
