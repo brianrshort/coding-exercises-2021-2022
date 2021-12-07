@@ -134,6 +134,13 @@ startButton.addEventListener("click", (e) => {
     setTime();
 })
 
+newGameButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    currentQuestionIndex = 0;
+    displayQuestions();
+    setTime();
+}) 
+
 function displayQuestions() {
     console.log(currentQuestionIndex);
     let obj = quizArr[currentQuestionIndex];
