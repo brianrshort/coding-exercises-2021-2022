@@ -69,7 +69,10 @@ button.addEventListener("click", (e) => {
         });
         console.log(`Password includes capitals: ${checkCaps}`);
         if (!checkCaps) {
-
+            let randIndex = Math.floor(Math.random() * pw.length);
+            let randCap = splitCaps[Math.floor(Math.random() * 26)];
+            pw.splice(randIndex, 1, randCap);
+            console.log(`Inserted ${randCap} at index ${randIndex}`);
         }
     }
 
