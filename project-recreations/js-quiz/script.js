@@ -180,6 +180,11 @@ answerFour.addEventListener("click", (e) => {
 
 function checkAnswer(val) {
     console.log(val);
+    if (val === "false") {
+        rightOrWrong.innerText = "Wrong answer!";
+    } else if (val === "true") {
+        rightOrWrong.innerText = "Right answer!";
+    }
 }
 
 
