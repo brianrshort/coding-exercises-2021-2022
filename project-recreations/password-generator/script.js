@@ -22,11 +22,16 @@ button.addEventListener("click", (e) => {
     e.preventDefault();
     //console.log(pwlength.value);
 
-    //If no boxes were checked, a warning/error message appears
+    //If no boxes were checked, a warning/error message appears.
+    //If the input shows more than 100 characters or fewer than 8 characters,
+    //a warning/error message appears.
     if (!caps.checked && !lowers.checked && !nums.checked && !chars.checked) {
         passPlace.innerText = "No password character types selected."
+    } else if (pwlength.value > 100) {
+        passPlace.innerText = "Maximum length is 100 characters.";
+    } else if (pwlength.value < 8) {
+        passPlace.innerText = "Minimum length is 8 characters.";
     } else {
-
     //The main password variable
     let pw = [];
 
@@ -123,8 +128,6 @@ button.addEventListener("click", (e) => {
             pw.splice(randIndex, 1, randCap);
         }
     }
-
-    //console.log(pw);
 
     //Finally, make the password actually appear on the screen after it's been created
     passPlace.innerText = pw.join("");
