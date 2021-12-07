@@ -20,22 +20,22 @@ let quizArr = [
         a1: {
             index: 1,
             text: "David",
-            correct: false
+            correct: "false"
         },
         a2: {
             index: 2,
             text: "Michael",
-            correct: false
+            correct: "false"
         },
         a3: {
             index: 3,
             text: "Brian",
-            correct: true
+            correct: "true"
         },
         a4: {
             index: 4,
             text: "Hameed",
-            correct: false
+            correct: "false"
         },
     },
     {
@@ -43,22 +43,22 @@ let quizArr = [
         a1: {
             index: 1,
             text: "Green",
-            correct: true
+            correct: "true"
         },
         a2: {
             index: 2,
             text: "Mauve",
-            correct: false
+            correct: "false"
         },
         a3: {
             index: 3,
             text: "Gray",
-            correct: false
+            correct: "false"
         },
         a4: {
             index: 4,
             text: "Hameed",
-            correct: false
+            correct: "false"
         },
     },
     {
@@ -66,22 +66,22 @@ let quizArr = [
         a1: {
             index: 1,
             text: "Chicken",
-            correct: false
+            correct: "false"
         },
         a2: {
             index: 2,
             text: "Yossarian",
-            correct: true
+            correct: "true"
         },
         a3: {
             index: 3,
             text: "Spot",
-            correct: false
+            correct: "false"
         },
         a4: {
             index: 4,
             text: "Hameed",
-            correct: false
+            correct: "false"
         },
     },
     {
@@ -89,22 +89,22 @@ let quizArr = [
         a1: {
             index: 1,
             text: "Who am I?",
-            correct: false
+            correct: "false"
         },
         a2: {
             index: 2,
             text: "Where am I?",
-            correct: false
+            correct: "false"
         },
         a3: {
             index: 3,
             text: "What's my calling?",
-            correct: false
+            correct: "false"
         },
         a4: {
             index: 4,
             text: "What's the fourth question?",
-            correct: true
+            correct: "true"
         },
     }
 ] 
@@ -146,6 +146,7 @@ function displayQuestions() {
     let obj = quizArr[currentQuestionIndex];
     questionArea.innerText = obj.q.toString();
     answerOne.innerText = obj.a1.text;
+    answerOne.value = obj.a1.correct;
     answerTwo.innerText = obj.a2.text;
     answerThree.innerText = obj.a3.text;
     answerFour.innerText = obj.a4.text;
