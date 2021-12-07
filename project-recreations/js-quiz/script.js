@@ -37,6 +37,75 @@ let quizArr = [
             text: "Hameed",
             correct: false
         },
+    },
+    {
+        q: "What's my favorite color?",
+        a1: {
+            index: 1,
+            text: "Green",
+            correct: true
+        },
+        a2: {
+            index: 2,
+            text: "Mauve",
+            correct: false
+        },
+        a3: {
+            index: 3,
+            text: "Gray",
+            correct: false
+        },
+        a4: {
+            index: 4,
+            text: "Hameed",
+            correct: false
+        },
+    },
+    {
+        q: "What was my cat's name?",
+        a1: {
+            index: 1,
+            text: "Chicken",
+            correct: false
+        },
+        a2: {
+            index: 2,
+            text: "Yossarian",
+            correct: true
+        },
+        a3: {
+            index: 3,
+            text: "Spot",
+            correct: false
+        },
+        a4: {
+            index: 4,
+            text: "Hameed",
+            correct: false
+        },
+    },
+    {
+        q: "What's is the fourth question?",
+        a1: {
+            index: 1,
+            text: "Who am I?",
+            correct: false
+        },
+        a2: {
+            index: 2,
+            text: "Where am I?",
+            correct: false
+        },
+        a3: {
+            index: 3,
+            text: "What's my calling?",
+            correct: false
+        },
+        a4: {
+            index: 4,
+            text: "What's the fourth question?",
+            correct: true
+        },
     }
 ] 
 
