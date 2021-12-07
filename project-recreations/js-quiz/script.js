@@ -167,6 +167,7 @@ nextButton.addEventListener("click", (e) => {
         answerFour.innerText = "";
         newGameButton.style.display = "block";
         nextButton.style.display = "none";
+        secondsLeft = 0;
     }
 })
 
