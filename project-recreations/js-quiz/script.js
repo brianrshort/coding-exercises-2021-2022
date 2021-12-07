@@ -157,7 +157,7 @@ function displayQuestions() {
     answerFour.innerText = obj.a4.text;
     answerFour.value = obj.a4.correct;
     startButton.style.display = "none";
-    nextButton.style.display = "block";
+    nextButton.style.display = "none";
 }
 
 answerOne.addEventListener("click", (e) => {
@@ -182,6 +182,7 @@ answerFour.addEventListener("click", (e) => {
 
 function checkAnswer(val) {
     console.log(val);
+    nextButton.style.display = "block";
     if (val === "false") {
         rightOrWrong.innerText = "Wrong answer!";
         secondsLeft -= 5;
