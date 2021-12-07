@@ -75,6 +75,51 @@ button.addEventListener("click", (e) => {
             console.log(`Inserted ${randCap} at index ${randIndex}`);
         }
     }
+    if (lowers.checked) {
+        //console.log(pw);
+        //console.log(splitCaps);
+        let checkLowers = pw.some(el => {
+            
+            return splitLowers.includes(el);
+        });
+        console.log(`Password includes lowers: ${checkLowers}`);
+        if (!checkLowers) {
+            let randIndex = Math.floor(Math.random() * pw.length);
+            let randCap = splitLowers[Math.floor(Math.random() * 26)];
+            pw.splice(randIndex, 1, randCap);
+            console.log(`Inserted ${randCap} at index ${randIndex}`);
+        }
+    }
+    if (chars.checked) {
+        //console.log(pw);
+        //console.log(splitCaps);
+        let checkChars = pw.some(el => {
+            
+            return splitChars.includes(el);
+        });
+        console.log(`Password includes characters: ${checkChars}`);
+        if (!checkChars) {
+            let randIndex = Math.floor(Math.random() * pw.length);
+            let randCap = splitChars[Math.floor(Math.random() * 26)];
+            pw.splice(randIndex, 1, randCap);
+            console.log(`Inserted ${randCap} at index ${randIndex}`);
+        }
+    }
+    if (nums.checked) {
+        //console.log(pw);
+        //console.log(splitCaps);
+        let checkNums = pw.some(el => {
+            
+            return splitNums.includes(el);
+        });
+        console.log(`Password includes numbers: ${checkNums}`);
+        if (!checkNums) {
+            let randIndex = Math.floor(Math.random() * pw.length);
+            let randCap = splitNums[Math.floor(Math.random() * 26)];
+            pw.splice(randIndex, 1, randCap);
+            console.log(`Inserted ${randCap} at index ${randIndex}`);
+        }
+    }
 
     //console.log(pw);
     passPlace.innerText = pw.join("");
