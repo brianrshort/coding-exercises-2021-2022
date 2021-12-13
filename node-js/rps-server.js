@@ -12,7 +12,14 @@ const server = http.createServer((request, response) => {
             response.writeHead(200, {'Content-Type': "text/html"});
             fs.createReadStream('index.html').pipe(response);
             break;
-          } 
+          } else if (request.method === "POST") {
+            handlePostResponse(request, response);
+            break;
+          }
+        default: 
+          response.writeHead(404, {"Content-Type": "text/html"});
+          fs.createReadStream("404.html").pipe(response);
+          break; 
       }
   })
   
