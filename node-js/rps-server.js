@@ -1,7 +1,14 @@
 const fs = require('fs');
 // TODO: Require the http module
 const http = require('http');
-
+// TODO: Create a server
+const server = http.createServer((request, response) => {
+    
+  })
+  
+  server.listen(4001, () => {
+    console.log("Server is listening on " + server.address().port);
+  })
 
 
 // Function for handling POST responses
