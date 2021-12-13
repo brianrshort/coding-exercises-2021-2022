@@ -3,6 +3,7 @@ const fs = require('fs');
 const http = require('http');
 // TODO: Create a server
 const server = http.createServer((request, response) => {
+    const url = new URL(request.url, `http://${request.headers.host}`);
     
   })
   
