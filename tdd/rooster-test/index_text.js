@@ -9,3 +9,21 @@ describe('Rooster', () => {
         assert.strictEqual(expected, announced);
       })
     })
+    describe(".timeAtDawn", () => {
+        it('returns its argument as a string', () => {
+          const hour = "1";
+          const timed = Rooster.timeAtDawn(1);
+          assert.strictEqual(hour, timed);
+        })
+      })
+      describe("throws an error if passed", () => {
+        it('throws a range error', () => {
+          assert.throws(
+            () => {
+              Rooster.timeAtDawn(-1);
+            },
+            RangeError
+          );
+        })
+      })
+    })
