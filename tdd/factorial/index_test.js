@@ -13,6 +13,10 @@ describe('Calculate', () => {
             const result = Calculate.factorial(8);
             assert.equal(result, expectedResult);
           });
-
+          it('output of 0! is 1', () => {
+            const expectedResult = 1; 
+            const result = Calculate.factorial(0);
+            assert.equal(result, expectedResult);
+          })
     });
   });
