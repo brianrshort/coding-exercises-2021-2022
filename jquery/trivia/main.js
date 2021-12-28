@@ -14,5 +14,11 @@ $(document).ready(() =>{
         $(".wrong-text-three").fadeOut();
         $(".frown").show();
       })
-
+      $(".correct-answer").on("click", () => {
+        $(".frown").hide();
+        $(".smiley").show();
+        $(".wrong-text-one").fadeOut();
+        $(".wrong-text-two").fadeOut();
+        $(".wrong-text-three").fadeOut();
+      })
   });
