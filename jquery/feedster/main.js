@@ -7,5 +7,11 @@ $(document).ready(() => {
         $(".nav-menu").hide();
       })
 
+      $(".btn").on("mouseover", (event) => {
+        $(event.currentTarget).addClass("btn-hover");
+      }).on("mouseleave", (event) => {
+        $(event.currentTarget).removeClass('btn-hover');
+      })
+
   }); 
   
