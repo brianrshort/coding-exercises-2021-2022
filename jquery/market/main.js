@@ -8,5 +8,13 @@ $("document").ready(function() {
       $("#help").on("click", () => {
         $("#helpMenu").show()
       })
-      
+      $("#cart").on("mouseleave", () => {
+        $("#cartMenu").hide()
+      })
+      $("#account").on("mouseleave", () => {
+        $("#accountMenu").hide()
+      })
+      $("#help").on("mouseleave", () => {
+        $("#helpMenu").hide()
+      })
   })
