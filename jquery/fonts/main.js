@@ -14,5 +14,10 @@ $(document).ready(() => {
           fontWeight: $(event.currentTarget).val()
         })
       })
-
+      $("#size").on("keyup", event => {
+        let fontSize = $(event.currentTarget).val() + "px";
+        $(".preview").css({
+          fontSize: fontSize
+        })
+      })
   })
