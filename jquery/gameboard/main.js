@@ -6,7 +6,9 @@ var main = function() {
       $(".share").on("click", () => {
         $(".share-menu").toggle();
       })
-
+      $(".notification").on("click", (event) => {
+        $(event.currentTarget).toggleClass("active");
+      })
     };
     
     $(document).ready(main);
