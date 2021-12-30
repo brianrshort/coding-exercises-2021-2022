@@ -124,7 +124,7 @@ function setTime() {
         timeField.innerText = `Seconds Left: ${secondsLeft}`;
         secondsLeft--;
         if (secondsLeft < 0) {
-            clearInterval(timerInterval);
+            clearIntnnerval(timerInterval);
             timeField.innerText = "";
             gameOver();
         }
