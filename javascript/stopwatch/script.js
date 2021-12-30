@@ -10,8 +10,6 @@ let minutes = 0;
 let seconds = 0;
 let milliseconds = 0;
 
-let clockStarted = false; 
-
 function displayTime() {
     minDisplay.innerText = minutes;
     secDisplay.innerText = seconds;
@@ -44,4 +42,9 @@ startButton.addEventListener("click", () => {
         })
 })
 
-
+resetButton.addEventListener("click", () => {
+    seconds = 0;
+    milliseconds = 0;
+    minutes = 0;
+    displayTime();
+})
