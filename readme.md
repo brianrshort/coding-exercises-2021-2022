@@ -4,7 +4,7 @@ After taking a few months off for personal/family reasons, I decided to get back
 
 Below is a guide to the projects I've been working on. 
 
-## Bootcamp Exercises
+## Bootcamp Exercises (archived)
 
 These are exercises that I'm re-doing that I originally completed as part of the MSU Full Stack Web Development Bootcamp program. I've only done a few of these so far. 
 
@@ -62,7 +62,7 @@ These are exercises that were completed as part of coding courses on Codecademy.
     - Rooster Test
     - Unit Test
 
-## Duckett Exercises
+## Duckett Exercises (archived)
 
 These are exercises based on Jon Duckett guides to HTML, CSS, Javascript, and Jquery. I've only completed a few so far.
 * Form Practice
