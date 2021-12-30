@@ -11,3 +11,11 @@ let seconds = 0;
 let milliseconds = 0;
 
 let clockStarted = false; 
+
+function displayTime() {
+    minDisplay.innerText = minutes;
+    secDisplay.innerText = seconds;
+    milliDisplay.innerText = milliseconds;
+}
+
+displayTime();
