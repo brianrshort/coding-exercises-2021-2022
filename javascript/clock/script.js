@@ -7,4 +7,13 @@ const dateEl = document.getElementById("date");
 const yearEl = document.getElementById("year");
 const dayEl = document.getElementById("day");
 
-let today = new Date.now();
+//let today = new Date();
+//console.log(today); 
+
+setInterval(() => {
+    let today = new Date();
+    hourEl.innerText = today.getHours();
+    minuteEl.innerText = today.getMinutes();
+    secondsEl.innerText = today.getSeconds();
+    millisecondsEl.innerText = today.getMilliseconds();
+}, 10);
