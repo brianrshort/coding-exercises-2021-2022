@@ -72,6 +72,7 @@ These are exercises based on Jon Duckett guides to HTML, CSS, Javascript, and Jq
 
 These are general JavaScript coding challenge projects. The projects are collected here: [https://mikkegoes.com/javascript-projects-for-beginners/] (https://mikkegoes.com/javascript-projects-for-beginners/).
 * Stopwatch
+* Clock
 
 ## Project Recreations
 
