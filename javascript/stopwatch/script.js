@@ -1,5 +1,3 @@
-const { clear } = require("console");
-
 let minDisplay = document.getElementById("minutes");
 let secDisplay = document.getElementById("seconds");
 let milliDisplay = document.getElementById("milliseconds");
@@ -38,7 +36,7 @@ startButton.addEventListener("click", () => {
             if (milliseconds > 99) {
                 milliseconds = 0;
             }
-        }, 1);
+        }, 10);
         stopButton.addEventListener("click", () => {
             clearInterval(minInterval);
             clearInterval(secInterval);
@@ -47,4 +45,3 @@ startButton.addEventListener("click", () => {
 })
 
 
-displayTime();
