@@ -19,4 +19,6 @@ setInterval(() => {
     secondsEl.innerText = today.getSeconds();
     millisecondsEl.innerText = today.getMilliseconds();
     monthEl.innerText = months[today.getMonth()];
+    dateEl.innerText = today.getDate();
+    yearEl.innerText = today.getFullYear();
 }, 10);
