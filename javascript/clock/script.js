@@ -23,4 +23,5 @@ setInterval(() => {
     monthEl.innerText = months[today.getMonth()];
     dateEl.innerText = today.getDate();
     yearEl.innerText = today.getFullYear();
+    dayEl.innerText = days[today.getDay()];
 }, 10);
