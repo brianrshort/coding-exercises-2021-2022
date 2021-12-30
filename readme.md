@@ -81,3 +81,7 @@ These are recreated projects based on homework assignments originally assigned a
 * Inquirer App
 * JS Quiz
 * Password Generator
+
+### Markdown Practice
+
+A general note on Markdown syntax--read the rules at [https://www.markdownguide.org/basic-syntax/] (https://www.markdownguide.org/basic-syntax/) for more information.
