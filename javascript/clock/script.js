@@ -9,6 +9,8 @@ const dayEl = document.getElementById("day");
 
 //let today = new Date();
 //console.log(today); 
+const months = ["January","February","March","April","May","June",
+                    "July","August","September","October","November","December"]
 
 setInterval(() => {
     let today = new Date();
