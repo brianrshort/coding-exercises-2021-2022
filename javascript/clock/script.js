@@ -18,4 +18,5 @@ setInterval(() => {
     minuteEl.innerText = today.getMinutes();
     secondsEl.innerText = today.getSeconds();
     millisecondsEl.innerText = today.getMilliseconds();
+    monthEl.innerText = months[today.getMonth()];
 }, 10);
