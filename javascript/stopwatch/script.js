@@ -10,3 +10,4 @@ let minutes = 0;
 let seconds = 0;
 let milliseconds = 0;
 
+let clockStarted = false; 
