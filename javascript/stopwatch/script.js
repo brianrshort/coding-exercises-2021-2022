@@ -1,3 +1,5 @@
+const { clear } = require("console");
+
 let minDisplay = document.getElementById("minutes");
 let secDisplay = document.getElementById("seconds");
 let milliDisplay = document.getElementById("milliseconds");
@@ -17,5 +19,32 @@ function displayTime() {
     secDisplay.innerText = seconds;
     milliDisplay.innerText = milliseconds;
 }
+
+startButton.addEventListener("click", () => {
+        let minInterval = setInterval(() => {
+            minutes++;
+            minDisplay.innerText = minutes;
+        }, 60000);
+        let secInterval = setInterval(() => {
+            seconds++;
+            secDisplay.innerText = seconds;
+            if (seconds > 60) {
+                seconds = 0;
+            }
+        }, 1000);
+        let milliInterval = setInterval(() => {
+            milliseconds++;
+            milliDisplay.innerText = milliseconds;
+            if (milliseconds > 99) {
+                milliseconds = 0;
+            }
+        }, 1);
+        stopButton.addEventListener("click", () => {
+            clearInterval(minInterval);
+            clearInterval(secInterval);
+            clearInterval(milliInterval);
+        })
+})
+
 
 displayTime();
