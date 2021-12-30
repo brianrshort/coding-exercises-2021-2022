@@ -6,3 +6,5 @@ const monthEl = document.getElementById("month");
 const dateEl = document.getElementById("date");
 const yearEl = document.getElementById("year");
 const dayEl = document.getElementById("day");
+
+let today = new Date.now();
