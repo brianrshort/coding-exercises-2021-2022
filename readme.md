@@ -12,55 +12,55 @@ These are exercises that I'm re-doing that I originally completed as part of the
 
 These are exercises that were completed as part of coding courses on Codecademy.com. The list of exercises is below.
 1. Bootstrap
-    -Company.html
-    -composition.html
+    - Company.html
+    - composition.html
 2. CSS
-    -Broadway Design
-    -Color Lesson
-    -Dave's Burgers
-    -Healthy Recipes
-    -Portfolio Example
-    -Selectors
+    - Broadway Design
+    - Color Lesson
+    - Dave's Burgers
+    - Healthy Recipes
+    - Portfolio Example
+    - Selectors
 3. HTML
-    -HTML + CSS
-    -Fashion Blog
-    -First Chapter
-    -Form My Story
-    -Forms Validation
-    -HTML Forms
-    -NYC Blog
-    -Second Chapter
-    -Semantic HTML
-    -Table Practice
-    -Wine Festival
+    - HTML + CSS
+    - Fashion Blog
+    - First Chapter
+    - Form My Story
+    - Forms Validation
+    - HTML Forms
+    - NYC Blog
+    - Second Chapter
+    - Semantic HTML
+    - Table Practice
+    - Wine Festival
 4. Javascript Activities
-    -Credit Card Checker
-    -Dog Years
-    -Eight Ball
-    -Kelvin Weather
-    -Meal Object
-    -Number Guesser
-    -Race Age Calculator
-    -Rock/Paper/Scissors
-    -Secret Message
-    -Sleep Debt
-    -Story Words
-    -Team Object
-    -Training Days
-    -Unknown Organism
-    -Whale Speak
+    - Credit Card Checker
+    - Dog Years
+    - Eight Ball
+    - Kelvin Weather
+    - Meal Object
+    - Number Guesser
+    - Race Age Calculator
+    - Rock/Paper/Scissors
+    - Secret Message
+    - Sleep Debt
+    - Story Words
+    - Team Object
+    - Training Days
+    - Unknown Organism
+    - Whale Speak
 5. jquery
-    -Feedster
-    -Fonts
-    -Gameboard
-    -Market
-    -Trivia
+    - Feedster
+    - Fonts
+    - Gameboard
+    - Market
+    - Trivia
 6. Node-JS
-    -Rock Paper Scissors Server
+    - Rock Paper Scissors Server
 7. Test Driven Development
-    -Factorial
-    -Rooster Test
-    -Unit Test
+    - Factorial
+    - Rooster Test
+    - Unit Test
 
 ## Duckett Exercises
 
