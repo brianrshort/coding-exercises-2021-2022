@@ -1,7 +1,15 @@
 {
+  "name": "burgerapp",
+  "version": "2.0.0",
+  "description": "An app to CRUD a DB",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "brianrshort",
+  "license": "isc",
   "dependencies": {
     "express": "^4.17.2",
-    "mysql": "^2.18.1",
     "mysql2": "^2.3.3"
   }
 }
