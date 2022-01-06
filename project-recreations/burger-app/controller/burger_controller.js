@@ -18,4 +18,12 @@ router.post('/', (req, res) => {
     })
 })
 
+router.delete('/:id', (req, res) => {
+    let string = `DELETE FROM burgers WHERE id="${req.params.id}"`;
+    connection.query(string, (err, response) => {
+        console.log(response);
+        res.send(response);
+    });
+})
+
 module.exports = router;
