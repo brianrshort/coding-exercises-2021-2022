@@ -10,4 +10,12 @@ router.get("/", (req, res) => {
     })
 })
 
+router.post('/', (req, res) => {
+    let string = `INSERT INTO burgers (burger) VALUES ("${req.body.burger}")`;
+    connection.query(string, (err, response) => {
+        console.log(response);
+        res.send(response);
+    })
+})
+
 module.exports = router;
