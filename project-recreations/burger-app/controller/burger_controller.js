@@ -18,6 +18,15 @@ router.post('/', (req, res) => {
     })
 })
 
+router.put("/:id", (req, res) => {
+    let string=`UPDATE burgers SET devoured=${req.body.devoured} WHERE id="${req.params.id}";`;
+    console.log(string);
+    connection.query(string, (err, response) => {
+        console.log(response);
+        res.send(response);
+    });
+})
+
 router.delete('/:id', (req, res) => {
     let string = `DELETE FROM burgers WHERE id="${req.params.id}"`;
     connection.query(string, (err, response) => {
