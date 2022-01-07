@@ -8,12 +8,13 @@ let eatenBurgerDiv = document.getElementById("eaten");
 async function fetchGet() {
     let url ="/get/";
     const res = await fetch(url);
+    console.log(res);
     arr = await res.json();
     console.log(arr);
     for (var i = 0; i < arr.length; i++) {
-        if (arr[i].devoured = false) {
+        if (arr[i].devoured === 0) {
             uneatenArr.push(arr[i]);
-        } else {
+        } else if (arr[i].devoured === 1) {
             devouredArr.push(arr[i]);
         }
     };
