@@ -82,6 +82,9 @@ These are recreated projects based on homework assignments originally assigned a
 * Inquirer App
 * JS Quiz
 * Password Generator
+* Burger Mysql App
+    - Github Repo [https://github.com/brianrshort/burger-app-2021] (https://github.com/brianrshort/burger-app-2021)
+    - Heroku Deployment [https://fast-oasis-30913.herokuapp.com/] (https://fast-oasis-30913.herokuapp.com/) 
 
 ### Markdown Practice
 
