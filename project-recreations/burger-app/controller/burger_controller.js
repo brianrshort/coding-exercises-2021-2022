@@ -5,7 +5,7 @@ const connection = require('../config/connection');
 router.get("/", (req, res) => {
     let string = `SELECT * FROM burgers`;
     connection.query(string, (err, response) => {
-        console.log(response);
+        //console.log(response);
         res.send(response);
     })
 })
@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
 router.post('/', (req, res) => {
     let string = `INSERT INTO burgers (burger) VALUES ("${req.body.burger}")`;
     connection.query(string, (err, response) => {
-        console.log(response);
+        //console.log(response);
         res.send(response);
     })
 })
@@ -22,7 +22,7 @@ router.put("/:id", (req, res) => {
     let string=`UPDATE burgers SET devoured=${req.body.devoured} WHERE id="${req.params.id}";`;
     console.log(string);
     connection.query(string, (err, response) => {
-        console.log(response);
+        //console.log(response);
         res.send(response);
     });
 })
@@ -30,7 +30,7 @@ router.put("/:id", (req, res) => {
 router.delete('/:id', (req, res) => {
     let string = `DELETE FROM burgers WHERE id="${req.params.id}"`;
     connection.query(string, (err, response) => {
-        console.log(response);
+        //console.log(response);
         res.send(response);
     });
 })
