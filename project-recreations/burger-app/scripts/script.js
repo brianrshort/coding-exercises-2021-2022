@@ -59,3 +59,10 @@ function devourBurger(target) {
     .then(data => console.log(data));
 }
 
+function deleteBurger(id) {
+    fetch(`/${id}`, {
+        method: "DELETE"
+    })
+    .then(response => response.json())
+    .then(data => console.log(data));
+}
