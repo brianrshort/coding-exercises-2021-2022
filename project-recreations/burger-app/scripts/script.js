@@ -44,3 +44,18 @@ function displayBurger(burgerObj) {
     return div; 
 }
 
+function devourBurger(target) {
+    let obj = {};
+    if (target.name === "false") {
+        obj = { devoured: true };
+    } else if (target.name === "true") {
+        obj = { devoured: false };
+    }
+    fetch(`/${target.id}`, {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(obj)
+    }).then(response => response.json)
+    .then(data => console.log(data));
+}
+
