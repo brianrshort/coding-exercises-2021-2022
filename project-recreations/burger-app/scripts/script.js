@@ -6,7 +6,7 @@ let uneatenBurgerDiv = document.getElementById("uneaten");
 let eatenBurgerDiv = document.getElementById("eaten");
 
 fetch('/').then(res => res.json()).then(data => {
-    //console.log(data);
+    console.log(data);
     arr = data;
     console.log(arr);
     for (var i = 0; i < arr.length; i++) {
