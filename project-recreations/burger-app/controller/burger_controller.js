@@ -26,7 +26,7 @@ router.post('/post/', (req, res) => {
 
 router.put("/:id", (req, res) => {
     let string=`UPDATE burgers SET devoured=${req.body.devoured} WHERE id="${req.params.id}";`;
-    console.log(string);
+    //console.log(string);
     connection.query(string, (err, response) => {
         //console.log(response);
         res.send(response);
