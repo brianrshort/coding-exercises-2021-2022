@@ -18,6 +18,14 @@ fetch('/').then(res => res.json()).then(data => {
     };
     console.log(uneatenArr);
     console.log(devouredArr);
+    for (var i = 0; i < uneatenArr.length; i++) {
+        let burger = displayBurger(uneatenArr[i]);
+        uneatenBurgerDiv.append(burger);
+    }
+    for (var i = 0; i < devouredArr.length; i++) {
+        let burger = displayBurger(devouredArr[i]);
+        eatenBurgerDiv.append(burger);
+    }
 });
 
 function displayBurger(burgerObj) {
