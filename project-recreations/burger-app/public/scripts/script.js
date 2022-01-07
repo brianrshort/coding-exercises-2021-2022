@@ -51,7 +51,6 @@ function displayBurger(burgerObj) {
         e.preventDefault();
         //console.log(e.target);
         devourBurger(e.target);
-        location.reload();
     });
     div.append(devourButton);
     let deleteButton = document.createElement("button");
