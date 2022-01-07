@@ -8,9 +8,9 @@ let eatenBurgerDiv = document.getElementById("eaten");
 async function fetchGet() {
     let url ="/get/";
     const res = await fetch(url);
-    console.log(res);
+    //console.log(res);
     arr = await res.json();
-    console.log(arr);
+    //console.log(arr);
     for (var i = 0; i < arr.length; i++) {
         if (arr[i].devoured === 0) {
             uneatenArr.push(arr[i]);
@@ -18,8 +18,8 @@ async function fetchGet() {
             devouredArr.push(arr[i]);
         }
     };
-    console.log(uneatenArr);
-    console.log(devouredArr);
+    //console.log(uneatenArr);
+    //console.log(devouredArr);
     for (var i = 0; i < uneatenArr.length; i++) {
         let burger = displayBurger(uneatenArr[i]);
         uneatenBurgerDiv.append(burger);
@@ -48,7 +48,7 @@ function displayBurger(burgerObj) {
     devourButton.name = burgerObj.devoured;
     devourButton.addEventListener('click', e => {
         e.preventDefault();
-        console.log(e.target);
+        //console.log(e.target);
         devourBurger(e.target);
         location.reload();
     });
@@ -78,7 +78,7 @@ function devourBurger(target) {
         body: JSON.stringify(obj)
     }).then(response => response.json)
     .then(data => {
-        console.log(data);
+        //console.log(data);
         location.reload();
     });
 }
@@ -89,7 +89,7 @@ function deleteBurger(id) {
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data);
+        //console.log(data);
         location.reload();
     });
 }
