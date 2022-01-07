@@ -2,6 +2,9 @@ let arr;
 let devouredArr;
 let uneatenArr;
 
+let uneatenBurgerDiv = document.getElementById("uneaten");
+let eatenBurgerDiv = document.getElementById("eaten");
+
 fetch('/').then(res => res.json()).then(data => {
     //console.log(data);
     arr = data;
