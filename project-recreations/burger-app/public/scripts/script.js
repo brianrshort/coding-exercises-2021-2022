@@ -32,31 +32,34 @@ async function fetchGet() {
 
 fetchGet();
 
-
-
-
 function displayBurger(burgerObj) {
     let div = document.createElement("div");
     let header = document.createElement("h1");
     header.innerText = burgerObj.burger;
     div.append(header);
-    let devourButton = document.createElement("input");
+    let devourButton = document.createElement("button");
+    if (burgerObj.devoured === 0) {
+        devourButton.innerText = "Devour";
+    } else {
+        devourButton.innerText = "Undevour";
+    }
     devourButton.type = "submit";
     devourButton.id = burgerObj.id;
     devourButton.name = burgerObj.devoured;
     devourButton.addEventListener('click', e => {
         e.preventDefault();
+        console.log(e.target);
         devourBurger(e.target);
         location.reload();
     });
     div.append(devourButton);
-    let deleteButton = document.createElement("input");
+    let deleteButton = document.createElement("button");
+    deleteButton.innerText = "Delete";
     deleteButton.type = "submit";
     deleteButton.id = burgerObj.id;
     deleteButton.addEventListener('click', e => {
         e.preventDefault();
         deleteBurger(e.target.id);
-        location.reload();
     });
     div.append(deleteButton);
     return div; 
@@ -64,17 +67,20 @@ function displayBurger(burgerObj) {
 
 function devourBurger(target) {
     let obj = {};
-    if (target.name === "false") {
-        obj = { devoured: true };
-    } else if (target.name === "true") {
-        obj = { devoured: false };
+    if (target.name === "0") {
+        obj = { devoured: 1 };
+    } else if (target.name === "1") {
+        obj = { devoured: 0 };
     }
     fetch(`/${target.id}`, {
         method: "PUT",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(obj)
     }).then(response => response.json)
-    .then(data => console.log(data));
+    .then(data => {
+        console.log(data);
+        location.reload();
+    });
 }
 
 function deleteBurger(id) {
@@ -82,5 +88,8 @@ function deleteBurger(id) {
         method: "DELETE"
     })
     .then(response => response.json())
-    .then(data => console.log(data));
+    .then(data => {
+        console.log(data);
+        location.reload();
+    });
 }
