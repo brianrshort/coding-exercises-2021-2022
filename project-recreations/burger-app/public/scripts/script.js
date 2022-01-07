@@ -4,6 +4,7 @@ let uneatenArr = [];
 
 let uneatenBurgerDiv = document.getElementById("uneaten");
 let eatenBurgerDiv = document.getElementById("eaten");
+let createBurgerButton = document.getElementById("create");
 
 async function fetchGet() {
     let url ="/get/";
@@ -93,3 +94,18 @@ function deleteBurger(id) {
         location.reload();
     });
 }
+
+createBurgerButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log(e.target);
+    let obj = {};
+    let burgerName = document.getElementById("burger-name").value.trim();
+    obj.burger = burgerName;
+    fetch("/post/", {
+        method: "POST",
+        headers: {'content-type': "application/json"},
+        body: JSON.stringify(obj)
+    }).then(() => {
+        location.reload();
+    })
+})
