@@ -57,7 +57,14 @@ These are exercises that were completed as part of coding courses on Codecademy.
     - Trivia
 6. Node-JS
     - Rock Paper Scissors Server
-7. Test Driven Development
+7. React JS
+    - Animal Facts
+    - Auth Form
+    - Copycat
+    - Passing Thoughts
+    - Pet Social Media
+    - Random Color     
+8. Test Driven Development
     - Factorial
     - Rooster Test
     - Unit Test
